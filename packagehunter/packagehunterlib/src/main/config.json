@@ -17,8 +17,14 @@
   "module": {
     "reqPermissions": [
       {
+        "usedScene": {
+          "ability": [
+            "github.nisrulz.projectpackagehunter.slice.MainAbilitySlice"
+          ],
+          "when": "always"
+        },
         "reason": "necessary",
-        "name": "ohos.permission.GET_BUNDLE_INFO"
+        "name": "ohos.permission.GET_BUNDLE_INFO_PRIVILEGED"
       }
     ],
     "package": "github.nisrulz.packagehunterlib",

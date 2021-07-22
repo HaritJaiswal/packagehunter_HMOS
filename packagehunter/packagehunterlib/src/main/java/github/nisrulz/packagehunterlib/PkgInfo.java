@@ -49,26 +49,13 @@ public class PkgInfo implements Sequenceable {
         return true;
     }
 
-    public static final Sequenceable.Producer PRODUCER = new Sequenceable.Producer() {
-        public PkgInfo createFromParcel(Parcel in) {
-            // Initialize an instance first, then do customized unmarshlling.
-            PkgInfo instance = new PkgInfo();
-            instance.unmarshalling(in);
-            return instance;
-        }
+    public static final Sequenceable.Producer PRODUCER = in -> {
+        // Initialize an instance first, then do customized unmarshlling.
+        PkgInfo instance = new PkgInfo();
+        instance.unmarshalling(in);
+        return instance;
     };
 
-//    public static final Creator<PkgInfo> CREATOR = new Creator<PkgInfo>() {
-//        @Override
-//        public PkgInfo createFromParcel(Parcel in) {
-//            return new PkgInfo(in);
-//        }
-//
-//        @Override
-//        public PkgInfo[] newArray(int size) {
-//            return new PkgInfo[size];
-//        }
-//    };
 
     public PkgInfo() {
         versionName = "0.0";

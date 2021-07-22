@@ -4,8 +4,6 @@ import github.nisrulz.packagehunterlib.PkgInfo;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.agp.components.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ListItemProvider  extends BaseItemProvider {

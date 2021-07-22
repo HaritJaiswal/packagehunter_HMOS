@@ -7,6 +7,7 @@ import github.nisrulz.projectpackagehunter.ResourceTable;
 import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.ListContainer;
+import ohos.bundle.IBundleManager;
 import ohos.hiviewdfx.HiLog;
 import ohos.hiviewdfx.HiLogLabel;
 import ohos.rpc.RemoteException;
@@ -28,9 +29,7 @@ public class MainAbilitySlice extends AbilitySlice {
         try {
             pkgInfoArrayList = pkgHunter.getInstalledPackages();
             HiLog.debug(LABEL,"got the list");
-            System.out.println("got the list");
         } catch (Exception e) {
-            System.out.println(e.toString());
             HiLog.debug(LABEL,e.toString());
         }
 
@@ -44,15 +43,15 @@ public class MainAbilitySlice extends AbilitySlice {
 
     }
 
+    private void clickTestItem(int i) {
+    }
+
     private List<Integer> getData() {
         List<Integer> list = new ArrayList<>();
         for (int idx = 0; idx < pkgInfoArrayList.size(); idx++) {
             list.add(idx);
         }
         return list;
-    }
-
-    private void clickTestItem(int i) {
     }
 
     @Override
@@ -64,4 +63,5 @@ public class MainAbilitySlice extends AbilitySlice {
     public void onForeground(Intent intent) {
         super.onForeground(intent);
     }
+
 }

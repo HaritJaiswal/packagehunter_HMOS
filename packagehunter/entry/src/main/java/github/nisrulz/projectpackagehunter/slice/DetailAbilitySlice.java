@@ -19,11 +19,6 @@ public class DetailAbilitySlice extends AbilitySlice {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_detail);
 
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        if (toolbar != null) {
-//            setSupportActionBar(toolbar);
-//        }
-
         String packageName = intent.getStringParam("data");
         PackageHunter packageHunter = new PackageHunter(this);
 

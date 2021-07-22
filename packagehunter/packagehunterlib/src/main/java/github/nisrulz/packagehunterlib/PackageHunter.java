@@ -56,16 +56,16 @@ public class PackageHunter {
         this.context = context;
     }
 
-    public String[] getActivitiesForPkg(String packageName) {
+    public String[] getActivitiesForPkg(String packageName){
         BundleInfo bundleInfo = getPkgInfo(packageName, IBundleManager.GET_BUNDLE_WITH_ABILITIES); // doubt here "GET_BUNDLE_WITH_ABILITIES"
-        if (bundleInfo.	abilityInfos != null) {
+        if (bundleInfo.abilityInfos != null) {
             ArrayList<String> data = new ArrayList<>(bundleInfo.abilityInfos.size());
             for (int i = 0; i < bundleInfo.	abilityInfos.size(); i++) {
                 data.add(bundleInfo.abilityInfos.get(i).bundleName);
             }
             return data.toArray(new String[data.size()]);
         } else {
-            return null;
+            return new String[0];
         }
     }
 
@@ -107,7 +107,7 @@ public class PackageHunter {
         if (bundleInfo.reqPermissions != null) {
             return bundleInfo.	getReqPermissions().toArray(new String[0]);
         } else {
-            return null;
+            return new String[0];
         }
     }
 
